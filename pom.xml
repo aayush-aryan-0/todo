@@ -17,6 +17,21 @@
       <artifactId>sqlite-jdbc</artifactId>
       <version>3.45.1.0</version>
     </dependency>
+    <dependencies>
+    <!-- JavaFX Controls -->
+    <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-controls</artifactId>
+        <version>21.0.0.1</version>
+    </dependency>
+    <!-- for layouts, styling -->
+    <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-fxml</artifactId>
+        <version>21.0.0.1</version>
+    </dependency>
+    </dependencies>
+
 
     <!-- SLF4J no-op to hide warnings -->
     <dependency>
