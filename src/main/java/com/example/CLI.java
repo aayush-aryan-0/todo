@@ -16,8 +16,7 @@ public class CLI {
                         2.Mark task as done/undone
                         3.Delete task
                         4.Quit
-                        Enter choice:  
-                        """);
+                        Enter choice: """);
                 choice=sc.nextInt();
                 sc.nextLine();
                 switch (choice) {
@@ -44,13 +43,14 @@ public class CLI {
                     }
                     case 4->{
                         System.out.println("Quiting");
-                        break;
+                        System.exit(0);;
                     }
                     default->System.out.println("Error");
                         
                 }
-                
+                System.out.println();
                 ReadToDo.disp();
+                System.out.println();
             }
           
             break;
@@ -58,15 +58,17 @@ public class CLI {
        
         catch(SQLException e){
             System.err.println(e);
+            System.out.print("Press Enter to continue: ");
             sc.nextLine();
         }
         catch(TaskAlreadyExists|TaskNotFound e){
             System.out.println(e.getMessage());
-            
+            System.out.print("Press Enter to continue: ");
             sc.nextLine();
         }
         catch(Exception e){
             System.err.println(e);
+            System.out.print("Press Enter to continue: ");
             sc.nextLine();
         }
         }

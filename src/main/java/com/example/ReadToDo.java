@@ -17,7 +17,7 @@ public class ReadToDo {
             String taskDone=(done==0)?"Not done":"Done";
         
 
-            System.out.println(task + " " + taskDone );
+            System.out.println(task + " : " + taskDone );
 
         }
 
