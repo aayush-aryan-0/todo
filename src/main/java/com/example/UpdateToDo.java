@@ -16,8 +16,7 @@ public class UpdateToDo {
             if (rs.next()) {
                 throw new TaskAlreadyExists("Such task already exist");
             }
-            Statement st = con.createStatement();
-            st.executeUpdate("CREATE TABLE IF NOT EXISTS todo(task TEXT PRIMARY KEY, done INTEGER NOT NULL DEFAULT 0)");
+           
             PreparedStatement ps = con.prepareStatement("INSERT INTO todo(task) VALUES(?)");
             ps.setString(1, task);
             ps.executeUpdate();

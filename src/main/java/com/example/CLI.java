@@ -13,7 +13,7 @@ public class CLI {
             while(choice!=4){
                 System.out.print("""
                         1.Add task
-                        2.Mark task as done
+                        2.Mark task as done/undone
                         3.Delete task
                         4.Quit
                         Enter choice:  
