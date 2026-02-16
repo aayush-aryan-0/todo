@@ -56,8 +56,8 @@ public class MainController {
             e.printStackTrace();
         }
     }
-
-    public void initialise() {
+    @FXML
+    public void initialize() {
         try{
             Task[] tasks=ReadToDo.loadDB();
             for(Task task:tasks){

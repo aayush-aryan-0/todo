@@ -19,11 +19,24 @@ public class TaskRowController {
     private CheckBox taskDone;
     @FXML
     private HBox taskBox;
+    @FXML
+    private Button saveButton;
    
-    public void deleteTask() throws SQLException,TaskNotFound{
-        UpdateToDo.deleteTask(taskText.getText());
-        VBox parentBox=(VBox)taskBox.getParent();
-        parentBox.getChildren().remove(taskBox);
+    public void deleteTask() {
+        try{
+            if(taskText.getText()!=null)
+                UpdateToDo.deleteTask(taskText.getText());
+            VBox parentBox=(VBox)taskBox.getParent();
+            parentBox.getChildren().remove(taskBox);
+        }
+        catch(SQLException e)
+        {
+            System.err.println(e);
+        }
+        catch(TaskNotFound e){
+            System.err.println(e);
+        }
+       
 
     }
     public void toggleTask() throws SQLException,TaskNotFound{
@@ -37,7 +50,18 @@ public class TaskRowController {
     public void setTaskDone(boolean done){
         taskDone.setSelected(done);
     }
-   
+    
+    public void saveTask(){
+        try{
+            UpdateToDo.addTask(taskText.getText());
+        }
+        catch(SQLException e){
+            System.err.println(e);
+        }
+        catch(TaskAlreadyExists e){
+            System.err.println(e);
+        }   
+    }
    
 
 }

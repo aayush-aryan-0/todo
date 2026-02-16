@@ -25,6 +25,11 @@ public class MainFX extends Application {
     public void start(Stage stage) throws IOException {
         
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/layout.fxml"));
+        stage.setTitle("To-Do");
+
+    
+        Image icon = new Image(getClass().getResourceAsStream("/icon.png"));
+        stage.getIcons().add(icon);
 
        
         Scene scene = new Scene(loader.load());
