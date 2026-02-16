@@ -2,6 +2,7 @@ package com.example;
 
 import java.io.IOException;
 import java.rmi.server.ExportException;
+import java.sql.SQLException;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -38,6 +39,36 @@ public class MainController {
         catch (Exception e){
             e.printStackTrace();
         }
+    }
+    public void addRow(Task task){
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/taskBox.fxml"));
+
+            HBox newTaskBox = loader.load(); 
+            TaskRowController taskRowController = loader.getController();
+            taskRowController.setTaskDone(task.isDone());
+            taskRowController.setText(task.getTask());
+            
+            taskContainer.getChildren().add(newTaskBox);
+
+        } 
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void initialise() {
+        try{
+            Task[] tasks=ReadToDo.loadDB();
+            for(Task task:tasks){
+                addRow(task);
+            }
+        }
+        catch(SQLException e){
+            System.err.println(e);
+        }
+        
+
     }
     
 }

@@ -1,5 +1,7 @@
 package com.example;
 
+import java.sql.SQLException;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -18,12 +20,22 @@ public class TaskRowController {
     @FXML
     private HBox taskBox;
    
-    public void deleteTask(){
+    public void deleteTask() throws SQLException,TaskNotFound{
+        UpdateToDo.deleteTask(taskText.getText());
         VBox parentBox=(VBox)taskBox.getParent();
         parentBox.getChildren().remove(taskBox);
-    }
-    public void toggleTask(){
 
+    }
+    public void toggleTask() throws SQLException,TaskNotFound{
+        UpdateToDo.toggleDone(taskText.getText());
+    }
+
+    public void setText(String text){
+        taskText.setText(text);
+    }
+
+    public void setTaskDone(boolean done){
+        taskDone.setSelected(done);
     }
    
    
