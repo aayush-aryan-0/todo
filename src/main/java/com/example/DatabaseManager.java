@@ -15,7 +15,7 @@ public class DatabaseManager {
                 dbFolder.mkdirs();
             }
 
-            // Full path to the database file
+            
             String dbPath = folder + File.separator + "data.db";
 
         if(con==null||con.isClosed())

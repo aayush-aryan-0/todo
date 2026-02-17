@@ -22,24 +22,32 @@ import javafx.concurrent.*;
 public class MainFX extends Application {
 
     @Override
-    public void start(Stage stage) throws IOException {
-        
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/layout.fxml"));
-        stage.setTitle("To-Do");
+    public void start(Stage stage)  {
+        try{
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/layout.fxml"));
+                stage.setTitle("To-Do");
 
-    
-        Image icon = new Image(getClass().getResourceAsStream("/icon.png"));
-        stage.getIcons().add(icon);
 
-       
-        Scene scene = new Scene(loader.load());
-        //scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+                Image icon = new Image(getClass().getResourceAsStream("/icon.PNG"));
+                stage.getIcons().add(icon);
 
-     
 
-        stage.setScene(scene);
+                Scene scene = new Scene(loader.load());
+                //scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
 
-        stage.show();
+
+
+                stage.setScene(scene);
+
+                stage.show();
+        }
+        catch(IOException e){
+            System.err.println(e);
+        }
+        catch(Exception e){
+            System.err.println(e);
+        }
+      
     }
 
     public static void main(String[] args) {
