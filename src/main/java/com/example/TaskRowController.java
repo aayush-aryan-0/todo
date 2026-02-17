@@ -53,6 +53,10 @@ public class TaskRowController {
     
     public void saveTask(){
         try{
+            String content = taskText.getText();
+    
+  
+            System.out.println("DEBUG - TEXT IS: " + content);
             UpdateToDo.addTask(taskText.getText());
         }
         catch(SQLException e){

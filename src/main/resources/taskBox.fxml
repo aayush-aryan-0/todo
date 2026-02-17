@@ -6,7 +6,6 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.HBox?>
 
-
 <HBox fx:id="taskBox" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.TaskRowController">
    <children>
       <CheckBox fx:id="taskDone" mnemonicParsing="false" onAction="#toggleTask" HBox.hgrow="ALWAYS">
@@ -15,6 +14,7 @@
          </HBox.margin>
       </CheckBox>
       <TextArea fx:id="taskText" prefRowCount="1" promptText="Enter Task" text="&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;" wrapText="true" HBox.hgrow="ALWAYS" />
-      <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteTask" prefHeight="39.0" prefWidth="17.0" text="X" />
+      <Button fx:id="saveButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#saveTask" text="SAVE" HBox.hgrow="ALWAYS" />
+      <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteTask" prefHeight="40.0" prefWidth="23.0" text="X" HBox.hgrow="ALWAYS" />
    </children>
 </HBox>

@@ -32,6 +32,7 @@ public class MainController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/taskBox.fxml"));
 
             HBox newTaskBox = loader.load(); 
+            TaskRowController taskRowController = loader.getController();
             
             taskContainer.getChildren().add(newTaskBox);
 
