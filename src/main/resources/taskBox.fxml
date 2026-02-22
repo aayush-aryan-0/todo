@@ -5,35 +5,42 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<HBox fx:id="taskBox" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.TaskRowController">
+<HBox fx:id="taskBox" style="-fx-background-color: #23272e; -fx-background-radius: 100; -fx-border-radius: 100;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.TaskRowController">
    <children>
-      <CheckBox fx:id="taskDone" mnemonicParsing="false" onAction="#toggleTask" HBox.hgrow="ALWAYS">
+      <CheckBox fx:id="taskDone" mnemonicParsing="false" onAction="#toggleTask" style="-fx-background-color: #313336; -fx-background-radius: 100;" HBox.hgrow="ALWAYS">
          <HBox.margin>
             <Insets bottom="10.0" left="1.0" right="1.0" top="14.0" />
          </HBox.margin>
       </CheckBox>
-      <TextArea fx:id="taskText" prefRowCount="1" promptText="Enter Task" text="&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;" wrapText="true" HBox.hgrow="ALWAYS">
+      <TextArea fx:id="taskText" prefRowCount="1" promptText="Enter Task" style="-fx-border-radius: 100; -fx-border-color: #FFFFFF; -fx-fill: #FFFFFF; -fx-text-fill: #FFFFFF;" wrapText="true" HBox.hgrow="ALWAYS">
          <HBox.margin>
             <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
          </HBox.margin>
          <padding>
             <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
          </padding></TextArea>
-      <Button fx:id="saveButton" lineSpacing="1.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#saveTask" text="SAVE" textAlignment="CENTER" textFill="#27773c" wrapText="true" HBox.hgrow="ALWAYS">
+      <Button fx:id="saveButton" lineSpacing="1.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#saveTask" style="-fx-background-color: #313336; -fx-background-radius: 50;" text="SAVE" textAlignment="CENTER" textFill="#35ff67" wrapText="true" HBox.hgrow="ALWAYS">
          <HBox.margin>
             <Insets bottom="1.0" left="1.0" right="1.0" top="10.0" />
          </HBox.margin>
          <padding>
             <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-         </padding></Button>
-      <Button fx:id="deleteButton" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteTask" text="DELETE" textAlignment="CENTER" textFill="RED" wrapText="true" HBox.hgrow="ALWAYS">
+         </padding>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="deleteButton" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteTask" style="-fx-background-color: #313336; -fx-background-radius: 50;" text="DELETE" textAlignment="CENTER" textFill="RED" wrapText="true" HBox.hgrow="ALWAYS">
          <HBox.margin>
             <Insets bottom="1.0" left="1.0" right="1.0" top="10.0" />
          </HBox.margin>
          <padding>
             <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-         </padding></Button>
+         </padding>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
    </children>
    <padding>
       <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />

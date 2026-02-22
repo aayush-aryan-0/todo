@@ -33,7 +33,10 @@ public class MainFX extends Application {
 
 
                 Scene scene = new Scene(loader.load());
-                //scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+                scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+                stage.initStyle(StageStyle.DECORATED); 
+                //stage.setMaximized(false);
+                //stage.setResizable(false);
 
 
 
